@@ -9,7 +9,7 @@
   "data": {
     "url": "../data/malaysia_states.geojson",
     "format": {
-      "type": "json",
+      "type": "geojson",
       "property": "features"
     }
   },

@@ -24,17 +24,31 @@
       "as": "Active Cases"
     }
   ],
-  "mark": {"type": "geoshape", "stroke": "white"},
+  "mark": {
+    "type": "geoshape", 
+    "stroke": "white", 
+    "strokeWidth": 0.5
+  },
   "encoding": {
     "color": {
       "field": "Active Cases",
       "type": "quantitative",
-      "scale": {"type": "log", "scheme": "reds"},
+      "scale": {
+        "type": "log", 
+        "scheme": "reds"
+      },
       "title": "Active Cases"
     },
     "tooltip": [
       {"field": "properties.NAME", "type": "nominal", "title": "Country"},
       {"field": "Active", "type": "quantitative", "format": ",", "title": "Active Cases"}
     ]
+  },
+  "config": {
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    }
   }
 }

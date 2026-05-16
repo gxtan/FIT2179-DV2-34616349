@@ -3,23 +3,27 @@
   "title": "Debug Map: Checking GeoJSON Load",
   "width": 800,
   "height": 500,
+
   "projection": {
     "type": "mercator"
   },
+
   "data": {
     "url": "../data/malaysia_states.geojson",
     "format": {
-      "type": "geojson",
-      "property": "features"
+      "type": "geojson"
     }
   },
+
   "mark": {
     "type": "geoshape",
     "fill": "lightgray",
     "stroke": "white",
     "strokeWidth": 1
   },
+
   "encoding": {
+
     "tooltip": [
       {
         "field": "properties.shapeName",

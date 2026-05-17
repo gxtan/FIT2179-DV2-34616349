@@ -1,63 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What It Takes To Become a Higher Income Earner in Malaysia (T20)</title>
 
+  <title>
+    What It Takes To Become a Higher Income Earner in Malaysia
+  </title>
+
+  <!-- Vega libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
-  <link rel="stylesheet" href="css/styles.css">
-  
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
+
   <style>
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+    }
+
+    section {
+      width: 90%;
+      margin: auto;
+      margin-bottom: 50px;
+    }
+
     #map {
       width: 100%;
-      max-width: 800px;
-      margin: 0 auto;
-      display: block;
+      max-width: 900px;
+      margin: auto;
     }
+
   </style>
+
 </head>
+
 <body>
 
   <header>
-    <h1>What It Takes To Become A High Income Earner In Malaysia</h1>
-    <p>by: Tan Guo Xun | 34616349</p>
+    <h1>
+      What It Takes To Become A High Income Earner In Malaysia
+    </h1>
+
+    <p>
+      by Tan Guo Xun | 34616349
+    </p>
   </header>
 
   <section>
-    <h2>1. Income Distribution</h2>
+
+    <h2>
+      1. Income Distribution Across Malaysian States
+    </h2>
+
     <div id="map"></div>
+
   </section>
 
   <section>
-    <h2>2. Geographic Inequality</h2>
-    <p>TEMPORARY BODY</p>
+
+    <h2>
+      2. Geographic Inequality
+    </h2>
+
+    <p>
+      TEMPORARY BODY
+    </p>
+
     <div id="vis2"></div>
+
   </section>
 
   <section>
-    <h2>3. Income Reality</h2>
-    <p>TEMPORARY BODY</p>
+
+    <h2>
+      3. Income Reality
+    </h2>
+
+    <p>
+      TEMPORARY BODY
+    </p>
+
     <div id="vis3"></div>
+
   </section>
 
   <section>
-    <h2>Conclusion</h2>
-    <p>TEMPORARY BODY</p>
+
+    <h2>
+      Conclusion
+    </h2>
+
+    <p>
+      TEMPORARY BODY
+    </p>
+
   </section>
 
-  <script>
-    const embedOptions = {
-      actions: false, 
-    };
-    vegaEmbed('#map', '../vega-lite/choropleth_map.json', embedOptions)
+  <script type="text/javascript">
+
+    var specMap = "./vega-lite/choropleth_map.json";
+
+    vegaEmbed('#map', specMap, { actions: false })
       .then(function(result) {
-        const view = result.view;
+        console.log("Map loaded successfully");
       })
       .catch(console.error);
+
   </script>
 
 </body>

@@ -12,11 +12,6 @@
         "options": [2019, 2022, 2024],
         "name": "Select Year: "
       }
-    },
-    {
-      "name": "zoom",
-      "select": "interval",
-      "bind": "scales"
     }
   ],
 "projection": {

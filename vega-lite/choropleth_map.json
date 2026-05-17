@@ -25,7 +25,7 @@
     "scale": 3000
   },
   "data": {
-    "url": "../data/full_choropeth_map_household_income_percentile_by_state.csv",
+    "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/full_choropeth_map_household_income_percentile_by_state.csv",
     "format": {
       "type": "csv",
       "parse": {
@@ -42,7 +42,7 @@
       "lookup": "state",
       "from": {
         "data": {
-          "url": "../data/malaysia_state.topojson",
+          "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/malaysia_state.topojson",
           "format": {
             "type": "topojson",
             "feature": "states"

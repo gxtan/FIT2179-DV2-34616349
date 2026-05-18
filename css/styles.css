@@ -7,12 +7,20 @@ body {
 }
 
 header {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  text-align: center;
   background: white;
+  text-align: center;
 
-  /* reduce vertical spacing */
-  padding: 30px 20px 20px;
+  /* explicitly control spacing */
+  padding: 20px 20px;
+}
+
+header h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 42px;
+
+  /* remove default browser spacing */
+  margin: 0;
+  line-height: 1.2;
 }
 
 section {

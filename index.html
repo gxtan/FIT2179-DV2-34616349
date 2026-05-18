@@ -23,18 +23,18 @@
 
   <header>
     <h1>
-      What It Takes To Become A High Income Earner In Malaysia123213112333
+      What It Takes To Become A High Income Earner In Malaysia
     </h1>
   </header>
 
   <section>
 
     <h2>
-      1. Income Distribution Across Malaysian States divider tst
+      Income Distribution Across Malaysian States divider
     </h2>
 
     <div id="map"></div>
-    <p> new map added</p>
+    <p> new map added dbugging </p>
 
   </section>
   <hr class="divider">
@@ -82,6 +82,7 @@
 
     var specMap = "./vega-lite/choropleth_map.json";
 
+    // dbug message in case error with data
     vegaEmbed('#map', specMap, { actions: false })
       .then(function(result) {
         console.log("Map loaded successfully");

@@ -1,0 +1,49 @@
+date,state,percentile,variable,income
+2024,Johor,1,median,1682
+2024,Kedah,1,median,1178
+2024,Kelantan,1,median,1266
+2024,Melaka,1,median,2626
+2024,Negeri Sembilan,1,median,1297
+2024,Pahang,1,median,1428
+2024,Perak,1,median,1181
+2024,Perlis,1,median,1254
+2024,Penang,1,median,1477
+2024,Sabah,1,median,1082
+2024,Sarawak,1,median,1318
+2024,Selangor,1,median,2604
+2024,Terengganu,1,median,1795
+2024,Kuala Lumpur,1,median,2124
+2024,Labuan,1,median,1470
+2024,Putrajaya,1,median,3654
+2022,Johor,1,median,1197
+2022,Kedah,1,median,940
+2022,Kelantan,1,median,1054
+2022,Melaka,1,median,1433
+2022,Negeri Sembilan,1,median,1372
+2022,Pahang,1,median,1364
+2022,Perak,1,median,1043
+2022,Perlis,1,median,937
+2022,Penang,1,median,1251
+2022,Sabah,1,median,1049
+2022,Sarawak,1,median,1014
+2022,Selangor,1,median,2200
+2022,Terengganu,1,median,1396
+2022,Kuala Lumpur,1,median,2112
+2022,Labuan,1,median,2350
+2022,Putrajaya,1,median,3225
+2019,Johor,1,median,1089
+2019,Kedah,1,median,1010
+2019,Kelantan,1,median,836
+2019,Melaka,1,median,1101
+2019,Negeri Sembilan,1,median,980
+2019,Pahang,1,median,989
+2019,Perak,1,median,832
+2019,Perlis,1,median,750
+2019,Penang,1,median,1139
+2019,Sabah,1,median,872
+2019,Sarawak,1,median,933
+2019,Selangor,1,median,1598
+2019,Terengganu,1,median,976
+2019,Kuala Lumpur,1,median,2605
+2019,Labuan,1,median,1824
+2019,Putrajaya,1,median,3202

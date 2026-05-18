@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 700,
+  "height": 500,
+
+  "data": {
+    "url": "../data/slope_chart_sec2.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.variable == 'median' && (datum.date == 2019 || datum.date == 2024)"
+    }
+  ],
+
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "ordinal",
+      "title": "Year"
+    },
+
+    "y": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "Median Income (RM)"
+    },
+
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "legend": null
+    },
+
+    "tooltip": [
+      { "field": "state", "type": "nominal" },
+      { "field": "date", "type": "ordinal" },
+      { "field": "income", "type": "quantitative" }
+    ]
+  },
+
+  "config": {
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+
+    "view": {
+      "stroke": null
+    }
+  }
+}

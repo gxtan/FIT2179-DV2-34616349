@@ -37,6 +37,7 @@ h1 {
 h2 {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 28px;
+  text-align: center;
   margin-top: 0;
   margin-bottom: 20px;
 }
@@ -55,7 +56,7 @@ p {
   border: none;
   border-top: 1px solid #d9d9d9;
 
-  width: 1100px;
+  width: 1400px;
   max-width: 90%;
 
   margin: 0 auto;
@@ -64,15 +65,13 @@ p {
 /* chart container */
 .vega-embed {
   width: 100%;
-  max-width: 1100px;
-
-  margin: 30px auto;
   display: flex;
   justify-content: center;
+  margin: px auto;
 }
 
+/* center actual rendered chart */
 .vega-embed canvas,
 .vega-embed svg {
-  width: 100%;
-  height: auto;
+  margin: 0 auto;
 }

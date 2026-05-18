@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 800,
+  "height": 500,
+
+  "data": {
+    "url": "../data/dot_plot_sec3.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.variable == 'median' && (datum.date == 2019 || datum.date == 2022 || datum.date == 2024)"
+    }
+  ],
+
+  "mark": {
+    "type": "circle",
+    "opacity": 0.6,
+    "size": 40
+  },
+
+  "encoding": {
+    "y": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "Household Income (RM)"
+    },
+
+    "x": {
+      "field": "percentile",
+      "type": "quantitative",
+      "title": "Income Percentile",
+      "scale": {
+        "domain": [1, 100]
+      }
+    },
+
+    "color": {
+      "field": "date",
+      "type": "nominal",
+      "title": "Year",
+      "scale": {
+        "scheme": "set2"
+      }
+    },
+
+    "tooltip": [
+      { "field": "date", "type": "nominal" },
+      { "field": "percentile", "type": "quantitative" },
+      { "field": "income", "type": "quantitative" }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}

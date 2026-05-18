@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 600,
+  "height": 250,
+
+  "data": {
+    "url": "../data/ranked_barchart_household_income_percentile_by_state.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.variable == 'median'"
+    }
+  ],
+
+  "mark": {
+    "type": "bar",
+    "cornerRadiusEnd": 3
+  },
+
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "nominal",
+      "sort": "-x",
+      "title": "State"
+    },
+
+    "x": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "Median Household Income (RM)"
+    },
+
+    "color": {
+      "field": "income",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "blues"
+      },
+      "legend": null
+    },
+
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
+      {
+        "field": "income",
+        "type": "quantitative",
+        "title": "Income"
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "width": 900,
+  "height": 500,
+
+  "data": {
+    "url": "../data/full_choropeth_map_household_income_percentile_by_state.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.variable == 'median'"
+    }
+  ],
+
+  "mark": {
+    "type": "line",
+    "point": true
+  },
+
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "ordinal",
+      "title": "Year"
+    },
+
+    "y": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "Median Income (RM)"
+    },
+
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State"
+    },
+
+    "tooltip": [
+      {
+        "field": "state",
+        "type": "nominal"
+      },
+      {
+        "field": "date",
+        "type": "ordinal",
+        "title": "Year"
+      },
+      {
+        "field": "income",
+        "type": "quantitative",
+        "title": "Income"
+      }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "labelFontSize": 12,
+      "titleFontSize": 14
+    },
+
+    "legend": {
+      "titleFontSize": 13,
+      "labelFontSize": 11
+    }
+  }
+}

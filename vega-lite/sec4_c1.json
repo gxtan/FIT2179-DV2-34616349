@@ -1,0 +1,61 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": "GDP Heatmap by State and Sector (2023)",
+
+  "data": {
+    "url": "../data/sec4_c1_data.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.date == 2023"
+    },
+    {
+      "calculate": "log(datum.value + 1)",
+      "as": "value_log"
+    }
+  ],
+
+  "mark": {
+    "type": "rect"
+  },
+
+  "encoding": {
+    "x": {
+      "field": "state",
+      "type": "nominal",
+      "title": "State",
+      "axis": {
+        "labelAngle": -30
+      }
+    },
+
+    "y": {
+      "field": "sector",
+      "type": "nominal",
+      "title": "Sector",
+      "sort": ["p0", "p1", "p2", "p3", "p4", "p5", "p6"]
+    },
+
+    "color": {
+      "field": "value_log",
+      "type": "quantitative",
+      "title": "Value (log scaled)",
+      "scale": {
+        "scheme": "inferno"
+      }
+    },
+
+    "tooltip": [
+      { "field": "state", "type": "nominal" },
+      { "field": "sector", "type": "nominal" },
+      { "field": "value", "type": "quantitative", "format": "," },
+      { "field": "value_log", "type": "quantitative" }
+    ]
+  },
+
+  "config": {
+    "view": { "stroke": null }
+  }
+}

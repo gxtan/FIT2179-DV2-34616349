@@ -1,0 +1,155 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "title": {
+    "text": "Minimum Income Required to Be T20 by State",
+    "subtitle": "Compare changes across 2019, 2022, and 2024",
+    "anchor": "middle",
+    "fontSize": 20,
+    "subtitleFontSize": 13
+  },
+
+  "width": 850,
+  "height": 500,
+
+  "params": [
+    {
+      "name": "SelectedState",
+      "value": "Johor",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Johor",
+          "Kedah",
+          "Kelantan",
+          "Melaka",
+          "Negeri Sembilan",
+          "Pahang",
+          "Perak",
+          "Perlis",
+          "Pulau Pinang",
+          "Sabah",
+          "Sarawak",
+          "Selangor",
+          "Terengganu",
+          "W.P. Kuala Lumpur",
+          "W.P. Labuan",
+          "W.P. Putrajaya"
+        ],
+        "name": "State: "
+      }
+    }
+  ],
+
+  "data": {
+    "url": "../data/sec2_c2_data.csv",
+    "format": {
+      "type": "csv",
+      "parse": {
+        "date": "number",
+        "percentile": "number",
+        "income": "number"
+      }
+    }
+  },
+
+  "transform": [
+    {
+      "filter": "datum.state == SelectedState"
+    }
+  ],
+
+  "layer": [
+
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 4,
+        "color": "#bbbbbb",
+        "point": {
+          "filled": true,
+          "size": 120
+        }
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "date",
+          "type": "ordinal",
+          "axis": {
+            "title": "Year",
+            "labelAngle": 0
+          }
+        },
+
+        "y": {
+          "field": "income",
+          "type": "quantitative",
+
+          "scale": {
+            "zero": false
+          },
+
+          "axis": {
+            "title": "Minimum Income Required (RM)",
+            "format": ",.0f"
+          }
+        },
+
+        "tooltip": [
+          {
+            "field": "state",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "date",
+            "type": "quantitative",
+            "title": "Year"
+          },
+          {
+            "field": "income",
+            "type": "quantitative",
+            "format": ",.0f",
+            "title": "Minimum Income (RM)"
+          }
+        ]
+      }
+    },
+
+    {
+      "mark": {
+        "type": "text",
+        "dy": -12,
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "color": "#333"
+      },
+
+      "encoding": {
+
+        "x": {
+          "field": "date",
+          "type": "ordinal"
+        },
+
+        "y": {
+          "field": "income",
+          "type": "quantitative"
+        }
+      }
+    }
+  ],
+
+  "config": {
+    "view": {
+      "stroke": null
+    },
+
+    "axis": {
+      "labelFontSize": 11,
+      "titleFontSize": 13
+    }
+  }
+}

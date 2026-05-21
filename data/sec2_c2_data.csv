@@ -1,0 +1,49 @@
+date,state,percentile,variable,income
+2024,Johor,81,minimum,13567
+2024,Kedah,81,minimum,7818
+2024,Kelantan,81,minimum,7003
+2024,Melaka,81,minimum,11564
+2024,Negeri Sembilan,81,minimum,9981
+2024,Pahang,81,minimum,8095
+2024,Perak,81,minimum,8233
+2024,Perlis,81,minimum,8012
+2024,Pulau Pinang,81,minimum,12676
+2024,Sabah,81,minimum,9166
+2024,Sarawak,81,minimum,9711
+2024,Selangor,81,minimum,16051
+2024,Terengganu,81,minimum,9793
+2024,W.P. Kuala Lumpur,81,minimum,17052
+2024,W.P. Labuan,81,minimum,11635
+2024,W.P. Putrajaya,81,minimum,19032
+2022,Johor,81,minimum,11926
+2022,Kedah,81,minimum,7430
+2022,Kelantan,81,minimum,6487
+2022,Melaka,81,minimum,11171
+2022,Negeri Sembilan,81,minimum,9518
+2022,Pahang,81,minimum,7808
+2022,Perak,81,minimum,7922
+2022,Perlis,81,minimum,7794
+2022,Pulau Pinang,81,minimum,11495
+2022,Sabah,81,minimum,8536
+2022,Sarawak,81,minimum,9210
+2022,Selangor,81,minimum,15735
+2022,Terengganu,81,minimum,9231
+2022,W.P. Kuala Lumpur,81,minimum,16779
+2022,W.P. Labuan,81,minimum,10803
+2022,W.P. Putrajaya,81,minimum,18324
+2019,Johor,81,minimum,10880
+2019,Kedah,81,minimum,7550
+2019,Kelantan,81,minimum,6620
+2019,Melaka,81,minimum,10730
+2019,Negeri Sembilan,81,minimum,9300
+2019,Pahang,81,minimum,7600
+2019,Perak,81,minimum,7640
+2019,Perlis,81,minimum,7930
+2019,Pulau Pinang,81,minimum,10680
+2019,Sabah,81,minimum,8200
+2019,Sarawak,81,minimum,8650
+2019,Selangor,81,minimum,14440
+2019,Terengganu,81,minimum,9260
+2019,W.P. Kuala Lumpur,81,minimum,16640
+2019,W.P. Labuan,81,minimum,11390
+2019,W.P. Putrajaya,81,minimum,16330

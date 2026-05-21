@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": "Dumbbell chart showing the 99th percentile income range by state for 2024.",
   "data": {
-    "url": "../data/dumbbell_chart.csv"
+    "url": "../data/sec2_c1_data.csv"
   },
   "transform": [
     {

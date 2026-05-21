@@ -1,0 +1,88 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+  "description": "Fixed slope chart with padding and clean axis spacing",
+
+  "data": {
+    "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/sec3_c1_data.csv"
+  },
+
+  "transform": [
+    {
+      "filter": "datum.variable == 'median'"
+    },
+    {
+      "filter": "datum.date == 2019 || datum.date == 2022 || datum.date == 2024"
+    },
+    {
+      "calculate": "datum.percentile <= 40 ? 'B40' : datum.percentile <= 80 ? 'M40' : 'T20'",
+      "as": "group"
+    },
+    {
+      "aggregate": [
+        { "op": "mean", "field": "income", "as": "income" }
+      ],
+      "groupby": ["date", "group"]
+    }
+  ],
+  
+  "width": 400,
+  "height": 200,
+
+  "mark": {
+    "type": "line",
+    "point": {
+      "filled": true,
+      "size": 80
+    },
+    "strokeWidth": 3
+  },
+
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "ordinal",
+      "title": "Year",
+      "scale": {
+        "paddingInner": 0.4,
+        "paddingOuter": 0.3
+      }
+    },
+
+    "y": {
+      "field": "income",
+      "type": "quantitative",
+      "title": "Average Income",
+      "scale": {
+        "nice": true,
+        "zero": false,
+        "padding": 40
+      }
+    },
+
+    "color": {
+      "field": "group",
+      "type": "nominal",
+      "scale": {
+        "domain": ["T20", "M40", "B40"],
+        "range": ["#d73027", "#f46d43", "#fee08b"]
+      }
+    },
+
+    "detail": {
+      "field": "group"
+    },
+
+    "tooltip": [
+      { "field": "group", "type": "nominal" },
+      { "field": "date", "type": "ordinal" },
+      { "field": "income", "type": "quantitative" }
+    ]
+  },
+
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
+}

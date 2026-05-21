@@ -1,32 +1,40 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Median Household Income by Malaysian State",
+
+  "title": "Malaysia Total GDP by State",
+
   "width": 970,
   "height": 500,
+
   "params": [
     {
       "name": "Year",
-      "value": 2024,
+      "value": 2023,
       "bind": {
-        "input": "select",
-        "options": [2019, 2022, 2024],
+        "input": "range",
+        "min": 2015,
+        "max": 2023,
+        "step": 1,
         "name": "Select Year: "
       }
     }
   ],
-"projection": {
-  "type": "mercator"
-},
+
+  "projection": {
+    "type": "mercator"
+  },
+
   "data": {
-    "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/sec1_data.csv",
+    "url": "../data/sec4_c2_data.csv",
     "format": {
       "type": "csv",
       "parse": {
         "date": "number",
-        "income": "number"
+        "total gdp": "number"
       }
     }
   },
+
   "transform": [
     {
       "filter": "datum.date == Year"
@@ -46,40 +54,38 @@
       "as": "geo"
     }
   ],
+
   "mark": {
     "type": "geoshape",
     "stroke": "white",
     "strokeWidth": 1
   },
+
   "encoding": {
     "shape": {
       "field": "geo",
       "type": "geojson"
     },
+
     "color": {
-      "field": "income",
+      "field": "total gdp",
       "type": "quantitative",
+      "title": "Total GDP (RM million)",
       "scale": {
-        "scheme": "blues"
-      },
-      "title": "Median Income (RM)"
+        "scheme": "blues",
+        "type": "quantile",
+        "n": 5
+      }
     },
+
     "tooltip": [
+      { "field": "state", "type": "nominal", "title": "State" },
+      { "field": "date", "type": "quantitative", "title": "Year" },
       {
-        "field": "state",
-        "type": "nominal",
-        "title": "State"
-      },
-      {
-        "field": "date",
+        "field": "total gdp",
         "type": "quantitative",
-        "title": "Year"
-      },
-      {
-        "field": "income",
-        "type": "quantitative",
-        "format": ",",
-        "title": "Income (RM)"
+        "format": ",.2f",
+        "title": "Total GDP"
       }
     ]
   }

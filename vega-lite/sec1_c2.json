@@ -7,7 +7,7 @@
   "height": 200,
 
   "data": {
-    "url": "../data/sec1_chart1_mean_data.csv"
+    "url": "../data/sec1_c2_data.csv"
   },
 
   "transform": [

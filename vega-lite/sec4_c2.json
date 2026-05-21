@@ -1,24 +1,10 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
 
-  "title": "Malaysia Total GDP by State",
+  "title": "Total GDP by Malaysian State",
 
-  "width": 970,
+  "width": 900,
   "height": 500,
-
-  "params": [
-    {
-      "name": "Year",
-      "value": 2023,
-      "bind": {
-        "input": "range",
-        "min": 2015,
-        "max": 2023,
-        "step": 1,
-        "name": "Select Year: "
-      }
-    }
-  ],
 
   "projection": {
     "type": "mercator"
@@ -27,18 +13,11 @@
   "data": {
     "url": "../data/sec4_c2_data.csv",
     "format": {
-      "type": "csv",
-      "parse": {
-        "date": "number",
-        "total gdp": "number"
-      }
+      "type": "csv"
     }
   },
 
   "transform": [
-    {
-      "filter": "datum.date == Year"
-    },
     {
       "lookup": "state",
       "from": {
@@ -62,6 +41,7 @@
   },
 
   "encoding": {
+
     "shape": {
       "field": "geo",
       "type": "geojson"
@@ -70,21 +50,25 @@
     "color": {
       "field": "total gdp",
       "type": "quantitative",
-      "title": "Total GDP (RM million)",
+
       "scale": {
-        "scheme": "blues",
-        "type": "quantile",
-        "n": 5
-      }
+        "type": "log",
+        "scheme": "goldgreen"
+      },
+
+      "title": "Total GDP"
     },
 
     "tooltip": [
-      { "field": "state", "type": "nominal", "title": "State" },
-      { "field": "date", "type": "quantitative", "title": "Year" },
+      {
+        "field": "state",
+        "type": "nominal",
+        "title": "State"
+      },
       {
         "field": "total gdp",
         "type": "quantitative",
-        "format": ",.2f",
+        "format": ",.0f",
         "title": "Total GDP"
       }
     ]

@@ -11,7 +11,7 @@
   },
 
   "data": {
-    "url": "../data/sec4_c2_data.csv",
+    "url": "https://raw.githubusercontent.com/gxtan/FIT2179-DV2/main/data/sec4_c2_data.csv",
     "format": {
       "type": "csv"
     }
